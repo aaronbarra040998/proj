@@ -851,3 +851,42 @@ textarea:focus {
     flex-direction: column;
   }
 }
+/* === FAN ART MODAL === */
+#fanart-modal .modal-content {
+  max-width: 700px;
+  width: 90%;
+  background: linear-gradient(135deg, var(--bg-card), #F5F5F5);
+  border: 5px solid var(--pokemon-yellow);
+  border-radius: var(--radius-lg);
+  padding: 0;
+  overflow: hidden;
+}
+
+#fanart-modal .modal-body {
+  padding: 0;
+  text-align: center;
+}
+
+#fanart-modal .modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 10;
+  background: var(--pokemon-red);
+  color: white;
+  border: 3px solid white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+#fanart-modal .modal-close:hover {
+  background: var(--pokemon-fire);
+  transform: rotate(90deg);
+}

@@ -52,54 +52,108 @@
   </header>
 
   <main id="main-content" class="wrap">
-    <h1>👥 Pokémon Community Hub</h1>
-    <p class="page-description">Share your passion for Pokémon! Join our community and showcase your fan art.</p>
+    <h1 class="section-title">👥 Pokémon Community Hub</h1>
+    <p class="page-description">Connect with fellow trainers, share your passion, and showcase your Pokémon journey.</p>
 
-    <!-- FAN ART GALLERY -->
-    <section class="gallery-section" aria-labelledby="gallery-heading">
-      <h2 id="gallery-heading" class="section-title">🎨 Fan Art Gallery</h2>
-      <div class="fanart-grid" id="fanart-grid">
-        <!-- Gallery loaded by JavaScript -->
+    <!-- COMMUNITY STATS -->
+    <section class="community-stats" aria-labelledby="stats-heading">
+      <h2 id="stats-heading" class="visually-hidden">Community Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number" id="memberCount">0</span>
+          <span class="stat-label">Active Trainers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="fanArtCount">0</span>
+          <span class="stat-label">Fan Art Pieces</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="submissionCount">0</span>
+          <span class="stat-label">Submissions</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="typeCount">18</span>
+          <span class="stat-label">Types Mastered</span>
+        </div>
       </div>
     </section>
 
-    <!-- COMMUNITY FORM -->
-    <section class="form-section" aria-labelledby="form-heading">
-      <h2 id="form-heading" class="section-title">📝 Join Our Community</h2>
-      <form id="communityForm" method="get" action="action.html" class="community-form">
-        <div class="form-group">
-          <label for="trainerName">🏆 Trainer Name *</label>
-          <input type="text" id="trainerName" name="trainerName" required autocomplete="name" placeholder="Enter your trainer name...">
-        </div>
-        
-        <div class="form-group">
-          <label for="email">📧 Email Address *</label>
-          <input type="email" id="email" name="email" required autocomplete="email" placeholder="trainer@pokemon.com">
-        </div>
-        
-        <div class="form-group">
-          <label for="favoriteType">❤️ Favorite Pokémon Type *</label>
-          <select id="favoriteType" name="favoriteType" required>
-            <option value="">Select a type...</option>
-            <option value="Fire">🔥 Fire</option>
-            <option value="Water">💧 Water</option>
-            <option value="Grass">🌿 Grass</option>
-            <option value="Electric">⚡ Electric</option>
-            <option value="Psychic">🔮 Psychic</option>
-            <option value="Dragon">🐉 Dragon</option>
-          </select>
-        </div>
-        
-        <div class="form-group">
-          <label for="message">💭 Why do you love Pokémon?</label>
-          <textarea id="message" name="message" rows="5" placeholder="Share your Pokémon story..."></textarea>
-        </div>
-        
-        <input type="hidden" id="timestamp" name="timestamp" value="">
-        
-        <button type="submit" class="button button-primary">🚀 Join Community</button>
-      </form>
-    </section>
+    <!-- MAIN CONTENT GRID -->
+    <div class="community-grid">
+      <!-- LEFT COLUMN: FORM & RECENT SUBMISSIONS -->
+      <div class="community-left">
+        <!-- JOIN FORM -->
+        <section class="form-section" aria-labelledby="form-heading">
+          <h2 id="form-heading" class="section-title">📝 Join Our Community</h2>
+          <form id="communityForm" class="community-form" novalidate>
+            <div class="form-group">
+              <label for="trainerName">🏆 Trainer Name *</label>
+              <input type="text" id="trainerName" name="trainerName" required autocomplete="name" placeholder="Enter your trainer name...">
+              <span class="error-message" id="trainerName-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">📧 Email Address *</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="trainer@pokemon.com">
+              <span class="error-message" id="email-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="favoriteType">❤️ Favorite Pokémon Type *</label>
+              <select id="favoriteType" name="favoriteType" required>
+                <option value="">Select a type...</option>
+                <option value="Fire">🔥 Fire</option>
+                <option value="Water">💧 Water</option>
+                <option value="Grass">🌿 Grass</option>
+                <option value="Electric">⚡ Electric</option>
+                <option value="Psychic">🔮 Psychic</option>
+                <option value="Dragon">🐉 Dragon</option>
+                <option value="Ice">❄️ Ice</option>
+                <option value="Fighting">🥊 Fighting</option>
+              </select>
+              <span class="error-message" id="favoriteType-error"></span>
+            </div>
+            
+            <div class="form-group">
+              <label for="message">💭 Why do you love Pokémon?</label>
+              <textarea id="message" name="message" rows="4" maxlength="200" placeholder="Share your Pokémon story..."></textarea>
+              <small class="char-counter"><span id="charCount">0</span>/200</small>
+            </div>
+            
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+            
+            <button type="submit" class="button button-primary">
+              <span class="submit-text">🚀 Join Community</span>
+              <span class="loading-spinner" style="display:none;">⏳</span>
+            </button>
+          </form>
+          <div id="formSuccess" class="success-message" style="display:none;">
+            ✅ Welcome to the community! Your submission has been recorded.
+          </div>
+        </section>
+
+        <!-- RECENT SUBMISSIONS -->
+        <section class="recent-submissions" aria-labelledby="recent-heading">
+          <h2 id="recent-heading" class="section-title">🆕 Recent Trainer Submissions</h2>
+          <div id="submissionsList" class="submissions-list">
+            <p class="placeholder">No submissions yet. Be the first to join!</p>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN: FAN ART GALLERY -->
+      <div class="community-right">
+        <section class="gallery-section" aria-labelledby="gallery-heading">
+          <h2 id="gallery-heading" class="section-title">🎨 Fan Art Gallery</h2>
+          <div class="fanart-grid" id="fanart-grid">
+            <!-- Gallery loaded by JavaScript -->
+          </div>
+          <div class="gallery-controls">
+            <button id="loadMoreBtn" class="button button-secondary-light">Load More Art</button>
+          </div>
+        </section>
+      </div>
+    </div>
   </main>
 
   <footer class="site-footer">

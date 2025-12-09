@@ -1,8 +1,9 @@
 /**
- * home.js - Módulo ES6 para la página home mejorada
+ * home.js - Módulo ES6 para la página home mejorada con fetch automático
  */
 
 import { Storage } from '../modules/storage.js';
+import { fetchPokemon } from '../modules/api/pokemon.js';
 
 // Constantes mejoradas
 const TYPE_DATA = {
@@ -136,14 +137,31 @@ async function calculateEffectiveness(attackerSelect, defenderSelect, resultBox,
 
 /**
  * Muestra un Pokémon con el tipo seleccionado
+ * AHORA CON FETCH AUTOMÁTICO SI NO HAY DATOS
  */
 async function showRecommendedPokemon(type, container) {
   try {
-    // Llamada corregida y manejada con try...catch
-    const pokemonData = await Storage.getPokemonData() || [];
-    console.log('Pokemon data loaded for recommendation:', pokemonData.length);
+    // Verificar si hay datos en localStorage
+    let pokemonData = Storage.getPokemonData();
     
-    const matchingPokemon = pokemonData.filter(p => p.types && p.types.includes(type));
+    // Si no hay datos, hacer fetch automáticamente
+    if (!pokemonData || pokemonData.length === 0) {
+      console.log('No Pokemon data found, fetching from API...');
+      pokemonData = await fetchPokemon();
+      // Guardar los datos para futuras usos
+      Storage.setPokemonData(pokemonData);
+    }
+    
+    console.log('Pokemon data available:', pokemonData.length);
+    
+    // Verificar que los datos sean un array válido
+    if (!Array.isArray(pokemonData)) {
+      throw new Error('Pokemon data is not an array');
+    }
+    
+    const matchingPokemon = pokemonData.filter(p => 
+      p && p.types && Array.isArray(p.types) && p.types.includes(type)
+    );
     
     const suggestionDiv = container.querySelector('.pokemon-suggestion');
     
@@ -154,12 +172,12 @@ async function showRecommendedPokemon(type, container) {
 
     const randomPokemon = matchingPokemon[Math.floor(Math.random() * matchingPokemon.length)];
     
-    // Manejo seguro de stats (puede no existir)
+    // Manejo seguro de stats con optional chaining
     const hp = randomPokemon.stats?.hp || 'N/A';
     const attack = randomPokemon.stats?.attack || 'N/A';
     
     suggestionDiv.innerHTML = `
-      <img src="${randomPokemon.image}" alt="${randomPokemon.name}" width="80" height="80">
+      <img src="${randomPokemon.image}" alt="${randomPokemon.name}" width="80" height="80" loading="lazy">
       <div>
         <p><strong>${randomPokemon.name}</strong> is a ${TYPE_DATA[type].icon} ${type}-type Pokémon!</p>
         <p>HP: ${hp} | Attack: ${attack}</p>
@@ -168,7 +186,7 @@ async function showRecommendedPokemon(type, container) {
   } catch (error) {
     console.error('Error showing recommended Pokemon:', error);
     container.querySelector('.pokemon-suggestion').innerHTML = 
-      '<p>Unable to load Pokémon recommendation.</p>';
+      `<p>Unable to load Pokémon recommendation. Error: ${error.message}</p>`;
   }
 }
 
@@ -189,7 +207,7 @@ async function initTrivia() {
 
   try {
     const response = await fetch('data/trivia.json');
-    if (!response.ok) throw new Error('Failed to load trivia');
+    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     
     triviaQuestions = await response.json();
     console.log(`Loaded ${triviaQuestions.length} trivia questions`);
@@ -200,6 +218,7 @@ async function initTrivia() {
   } catch (error) {
     console.error('Error loading trivia:', error);
     triviaContent.innerHTML = '<p class="error-state">Unable to load trivia. Please refresh the page.</p>';
+    return;
   }
 
   // Event listeners
