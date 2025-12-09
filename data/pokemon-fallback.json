@@ -1,0 +1,52 @@
+[
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "types": ["Electric"],
+    "height": 0.4,
+    "weight": 6.0,
+    "abilities": ["Static"],
+    "baseExperience": 112,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+  },
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "types": ["Grass", "Poison"],
+    "height": 0.7,
+    "weight": 6.9,
+    "abilities": ["Overgrow"],
+    "baseExperience": 64,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+  },
+  {
+    "id": 4,
+    "name": "Charmander",
+    "types": ["Fire"],
+    "height": 0.6,
+    "weight": 8.5,
+    "abilities": ["Blaze"],
+    "baseExperience": 62,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+  },
+  {
+    "id": 7,
+    "name": "Squirtle",
+    "types": ["Water"],
+    "height": 0.5,
+    "weight": 9.0,
+    "abilities": ["Torrent"],
+    "baseExperience": 63,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+  },
+  {
+    "id": 149,
+    "name": "Dragonite",
+    "types": ["Dragon", "Flying"],
+    "height": 2.2,
+    "weight": 210.0,
+    "abilities": ["Inner Focus"],
+    "baseExperience": 300,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png"
+  }
+]

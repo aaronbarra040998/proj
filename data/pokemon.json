@@ -1,0 +1,202 @@
+[
+  {
+    "id": 25,
+    "name": "Pikachu",
+    "types": ["Electric"],
+    "height": 0.4,
+    "weight": 6.0,
+    "abilities": ["Static", "Lightning Rod"],
+    "baseExperience": 112,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+  },
+  {
+    "id": 1,
+    "name": "Bulbasaur",
+    "types": ["Grass", "Poison"],
+    "height": 0.7,
+    "weight": 6.9,
+    "abilities": ["Overgrow", "Chlorophyll"],
+    "baseExperience": 64,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+  },
+  {
+    "id": 4,
+    "name": "Charmander",
+    "types": ["Fire"],
+    "height": 0.6,
+    "weight": 8.5,
+    "abilities": ["Blaze", "Solar Power"],
+    "baseExperience": 62,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+  },
+  {
+    "id": 7,
+    "name": "Squirtle",
+    "types": ["Water"],
+    "height": 0.5,
+    "weight": 9.0,
+    "abilities": ["Torrent", "Rain Dish"],
+    "baseExperience": 63,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+  },
+  {
+    "id": 149,
+    "name": "Dragonite",
+    "types": ["Dragon", "Flying"],
+    "height": 2.2,
+    "weight": 210.0,
+    "abilities": ["Inner Focus", "Multiscale"],
+    "baseExperience": 300,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png"
+  },
+  {
+    "id": 94,
+    "name": "Gengar",
+    "types": ["Ghost", "Poison"],
+    "height": 1.5,
+    "weight": 40.5,
+    "abilities": ["Cursed Body"],
+    "baseExperience": 225,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png"
+  },
+  {
+    "id": 130,
+    "name": "Gyarados",
+    "types": ["Water", "Flying"],
+    "height": 6.5,
+    "weight": 235.0,
+    "abilities": ["Intimidate", "Moxie"],
+    "baseExperience": 189,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png"
+  },
+  {
+    "id": 6,
+    "name": "Charizard",
+    "types": ["Fire", "Flying"],
+    "height": 1.7,
+    "weight": 90.5,
+    "abilities": ["Blaze", "Solar Power"],
+    "baseExperience": 240,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+  },
+  {
+    "id": 150,
+    "name": "Mewtwo",
+    "types": ["Psychic"],
+    "height": 2.0,
+    "weight": 122.0,
+    "abilities": ["Pressure", "Unnerve"],
+    "baseExperience": 340,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
+  },
+  {
+    "id": 59,
+    "name": "Arcanine",
+    "types": ["Fire"],
+    "height": 1.9,
+    "weight": 155.0,
+    "abilities": ["Intimidate", "Flash Fire"],
+    "baseExperience": 194,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png"
+  },
+  {
+    "id": 65,
+    "name": "Alakazam",
+    "types": ["Psychic"],
+    "height": 1.5,
+    "weight": 48.0,
+    "abilities": ["Synchronize", "Inner Focus"],
+    "baseExperience": 250,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png"
+  },
+  {
+    "id": 80,
+    "name": "Slowbro",
+    "types": ["Water", "Psychic"],
+    "height": 1.6,
+    "weight": 78.5,
+    "abilities": ["Oblivious", "Own Tempo"],
+    "baseExperience": 172,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png"
+  },
+  {
+    "id": 142,
+    "name": "Aerodactyl",
+    "types": ["Rock", "Flying"],
+    "height": 1.8,
+    "weight": 59.0,
+    "abilities": ["Rock Head", "Pressure"],
+    "baseExperience": 180,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png"
+  },
+  {
+    "id": 115,
+    "name": "Kangaskhan",
+    "types": ["Normal"],
+    "height": 2.2,
+    "weight": 80.0,
+    "abilities": ["Early Bird", "Scrappy"],
+    "baseExperience": 172,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png"
+  },
+  {
+    "id": 128,
+    "name": "Tauros",
+    "types": ["Normal"],
+    "height": 1.4,
+    "weight": 88.4,
+    "abilities": ["Intimidate", "Anger Point"],
+    "baseExperience": 172,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png"
+  },
+  {
+    "id": 121,
+    "name": "Starmie",
+    "types": ["Water", "Psychic"],
+    "height": 1.1,
+    "weight": 80.0,
+    "abilities": ["Illuminate", "Natural Cure"],
+    "baseExperience": 182,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png"
+  },
+  {
+    "id": 124,
+    "name": "Jynx",
+    "types": ["Ice", "Psychic"],
+    "height": 1.4,
+    "weight": 40.6,
+    "abilities": ["Oblivious", "Forewarn"],
+    "baseExperience": 159,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/124.png"
+  },
+  {
+    "id": 112,
+    "name": "Rhydon",
+    "types": ["Ground", "Rock"],
+    "height": 1.9,
+    "weight": 120.0,
+    "abilities": ["Lightning Rod", "Rock Head"],
+    "baseExperience": 170,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/112.png"
+  },
+  {
+    "id": 51,
+    "name": "Dugtrio",
+    "types": ["Ground"],
+    "height": 0.7,
+    "weight": 33.3,
+    "abilities": ["Sand Veil", "Arena Trap"],
+    "baseExperience": 142,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png"
+  },
+  {
+    "id": 38,
+    "name": "Ninetales",
+    "types": ["Fire"],
+    "height": 1.1,
+    "weight": 19.9,
+    "abilities": ["Flash Fire", "Drought"],
+    "baseExperience": 177,
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png"
+  }
+]

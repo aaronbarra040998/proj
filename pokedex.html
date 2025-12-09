@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokédex Interactive — Pokémon Hub</title>
+  <meta name="description" content="Interactive Pokédex with dynamic search, stats and Pokémon data.">
+  <meta name="author" content="Aaron A. Barra">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:title" content="Pokédex Interactive — Pokémon Hub">
+  <meta property="og:description" content="Explore 150+ Pokémon with dynamic stats and information.">
+  <meta property="og:image" content="images/pokeball-preview.png">
+  <meta property="og:url" content="pokedex.html">
+  <meta property="og:type" content="website">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="images/pokeball.ico" type="image/x-icon">
+
+  <!-- CSS CON RUTAS ABSOLUTAS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/pokedex.css">
+  
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="logo">
+        <a href="index.html" aria-label="Pokémon Hub homepage">
+          <span class="logo-text">Pokémon Hub</span>
+        </a>
+      </div>
+      <button id="menuBtn" class="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="menu-icon">☰</span>
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="pokedex.html" aria-current="page">Pokédex</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="attributions.html">Attributions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="wrap">
+    <h1>Interactive Pokédex</h1>
+    <p class="page-description">Discover and explore detailed information about 150 Pokémon with dynamic search and filtering.</p>
+
+    <!-- CONTROLS -->
+    <section class="controls" aria-labelledby="controls-heading">
+      <h2 id="controls-heading" class="visually-hidden">Search and Filter Controls</h2>
+      <div class="filter-group">
+        <label for="typeFilter">Filter by Type:</label>
+        <select id="typeFilter" aria-label="Filter Pokémon by type">
+          <option value="">All Types</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <button id="favoritesFilter" class="button button-secondary-light" aria-pressed="false">
+          Show Only Favorites ⭐
+        </button>
+      </div>
+    </section>
+
+    <!-- POKÉDEX GRID -->
+    <section id="pokedex-grid" class="pokedex-grid" aria-live="polite" aria-label="Pokémon listings">
+      <div class="loading-state">
+        <p>Loading Pokédex data...</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL -->
+  <div id="pokemon-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pokémon Hub</h3>
+          <p>Interactive Pokémon experience built with vanilla web technologies.</p>
+          <p><a href="attributions.html">📋 Resource Attributions</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Development</h3>
+          <p>Aaron A. Barra | WDD 231</p>
+          <p id="lastModified">Last modified: Loading...</p>
+          <p><a href="https://youtube.com/your-video-demo" target="_blank" rel="noopener noreferrer">📹 Project Video</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script type="module" src="scripts/main.js"></script>
+  <script type="module" src="scripts/pages/pokedex.js"></script>
+</body>
+</html>

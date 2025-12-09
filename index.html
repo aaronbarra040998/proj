@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pokémon Hub | Interactive Pokémon Experience</title>
+  <meta name="description" content="Interactive Pokémon tools, Pokédex data, and community features built with vanilla web technologies.">
+  <meta name="author" content="Aaron A. Barra">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pokémon Hub | Interactive Pokémon Experience">
+  <meta property="og:description" content="Interactive Pokémon tools and Pokédex data.">
+  <meta property="og:image" content="/wdd231/finalproject/images/pokeball-preview.png">
+  <meta property="og:url" content="/wdd231/finalproject/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Pokémon Hub">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/wdd231/finalproject/images/pokeball.ico" type="image/x-icon">
+
+  <!-- CSS - RUTAS ABSOLUTAS PARA GITHUB PAGES -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="logo">
+        <a href="index.html" aria-label="Pokémon Hub homepage">
+          <span class="logo-text">Pokémon Hub</span>
+        </a>
+      </div>
+      <button id="menuBtn" class="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="menu-icon">☰</span>
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="pokedex.html">Pokédex</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="attributions.html">Attributions</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="wrap">
+    <h1 class="visually-hidden">Pokémon Hub</h1>
+    
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <img src="/wdd231/finalproject/images/hero-pokemon.jpg" 
+           alt="Pikachu and other Pokémon in a vibrant battle scene"
+           class="hero-image"
+           width="1200"
+           height="600"
+           loading="eager">
+      <div class="hero-content">
+        <h2 id="hero-heading">Explore the World of Pokémon</h2>
+        <p>Interactive tools, comprehensive Pokédex data, and a thriving community for trainers worldwide.</p>
+        <div class="hero-actions">
+          <a href="pokedex.html" class="button button-primary">Open Pokédex</a>
+          <a href="community.html" class="button button-secondary-dark">Join Community</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Type Calculator Tool -->
+    <section class="calculator-section" aria-labelledby="calc-heading">
+      <h2 id="calc-heading" class="section-title">Type Effectiveness Calculator</h2>
+      <div class="calculator-container">
+        <div class="calculator-inputs">
+          <div class="form-group">
+            <label for="attackerType">Attacker Type</label>
+            <select id="attackerType">
+              <option value="">Select type...</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Grass">Grass</option>
+              <option value="Electric">Electric</option>
+              <option value="Psychic">Psychic</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Ice">Ice</option>
+              <option value="Fighting">Fighting</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="defenderType">Defender Type</label>
+            <select id="defenderType">
+              <option value="">Select type...</option>
+              <option value="Fire">Fire</option>
+              <option value="Water">Water</option>
+              <option value="Grass">Grass</option>
+              <option value="Electric">Electric</option>
+              <option value="Psychic">Psychic</option>
+              <option value="Dragon">Dragon</option>
+              <option value="Ice">Ice</option>
+              <option value="Fighting">Fighting</option>
+            </select>
+          </div>
+        </div>
+        <div id="calculationResult" class="result-box" aria-live="polite">
+          Select both types to see effectiveness...
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" aria-labelledby="features-heading">
+      <h2 id="features-heading" class="section-title">Why Choose Pokémon Hub?</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Comprehensive Data</h3>
+          <p>Access detailed stats, abilities, and type matchups for over 150 Pokémon.</p>
+          <a href="pokedex.html" class="feature-link">Explore Pokédex →</a>
+        </div>
+        <div class="feature-card">
+          <h3>Interactive Tools</h3>
+          <p>Calculate type effectiveness and plan your battle strategies.</p>
+          <a href="#calc-heading" class="feature-link">Try Calculator →</a>
+        </div>
+        <div class="feature-card">
+          <h3>Trainer Community</h3>
+          <p>Connect with fellow trainers and share your Pokémon journey.</p>
+          <a href="community.html" class="feature-link">Join Community →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section" aria-labelledby="stats-heading">
+      <h2 id="stats-heading" class="section-title">Our Impact</h2>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">150+</span>
+          <span class="stat-label">Pokémon Catalogued</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">18</span>
+          <span class="stat-label">Types Analyzed</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">1K+</span>
+          <span class="stat-label">Active Trainers</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">24/7</span>
+          <span class="stat-label">Available Tools</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Pokémon Hub</h3>
+          <p>Interactive Pokémon experience built with vanilla web technologies.</p>
+          <p><a href="attributions.html">📋 Resource Attributions</a></p>
+        </div>
+        <div class="footer-section">
+          <h3>Development</h3>
+          <p>Aaron A. Barra | WDD 231</p>
+          <p id="lastModified">Last modified: Loading...</p>
+          <p><a href="https://youtube.com/your-video-demo" target="_blank" rel="noopener noreferrer">📹 Project Video</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script type="module" src="scripts/main.js"></script>
+  <script type="module" src="scripts/pages/home.js"></script>
+</body>
+</html>
