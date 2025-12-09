@@ -1,21 +1,43 @@
 /**
- * community.js - Módulo ES6 para la página Community mejorada
+ * community.js - Módulo ES6 para la página Community con fan art local WebP
  */
 
 import { Storage } from '../modules/storage.js';
 import { isValidEmail } from '../utils/helpers.js';
 
-// Datos de ejemplo para fan art (más variados)
-const FAN_ART_IMAGES = Array.from({ length: 20 }, (_, i) => ({
-  src: `https://picsum.photos/seed/pokemon${i + 1}/400/400`,
-  alt: `Fan Art ${i + 1} - Pokémon artwork showcasing different Pokémon and styles`,
+// DEFINIR TYPE_DATA AQUÍ (necesario para loadRecentSubmissions)
+const TYPE_DATA = {
+  Fire: { icon: '🔥', color: '#F08030' },
+  Water: { icon: '💧', color: '#6890F0' },
+  Electric: { icon: '⚡', color: '#F8D030' },
+  Grass: { icon: '🌿', color: '#78C850' },
+  Ice: { icon: '❄️', color: '#98D8D8' },
+  Fighting: { icon: '🥊', color: '#C03028' },
+  Poison: { icon: '☠️', color: '#A040A0' },
+  Ground: { icon: '🌍', color: '#E0C068' },
+  Flying: { icon: '🦅', color: '#A890F0' },
+  Psychic: { icon: '🔮', color: '#F85888' },
+  Bug: { icon: '🐛', color: '#A8B820' },
+  Rock: { icon: '🪨', color: '#B8A038' },
+  Ghost: { icon: '👻', color: '#705898' },
+  Dragon: { icon: '🐉', color: '#7038F8' },
+  Dark: { icon: '🌙', color: '#705848' },
+  Steel: { icon: '🔩', color: '#B8B8D0' },
+  Fairy: { icon: '🧚', color: '#EE99AC' },
+  Normal: { icon: '⚪', color: '#A8A878' }
+};
+
+// IMÁGENES LOCALES DE FAN ART EN FORMATO WebP
+const FAN_ART_IMAGES = Array.from({ length: 15 }, (_, i) => ({
+  src: `images/fanart/fanart${i + 1}.webp`,
+  alt: `Fan Art ${i + 1} - Pokémon artwork by community trainer`,
   artist: `Trainer ${String.fromCharCode(65 + (i % 26))}${String.fromCharCode(65 + ((i + 13) % 26))}`,
   likes: Math.floor(Math.random() * 100) + 10
 }));
 
 // Contador para lazy loading de galería
 let displayedImages = 0;
-const IMAGES_PER_LOAD = 8;
+const IMAGES_PER_LOAD = 6;
 
 /**
  * Inicializa la página Community
@@ -27,8 +49,55 @@ export function initCommunity() {
   initFanArtGallery();
   initCommunityForm();
   loadRecentSubmissions();
+  initModal(); // ✅ CRÍTICO: Inicializar modal
   
   console.log('Community page initialized successfully');
+}
+
+/**
+ * Inicializa modal de fan art - ✅ CORREGIDO
+ */
+function initModal() {
+  const modal = document.getElementById('fanart-modal');
+  if (!modal) {
+    console.error('Modal element not found!');
+    return;
+  }
+  
+  // Botón de cerrar
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
+  }
+  
+  // Cerrar al hacer clic fuera del contenido
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+  
+  // Cerrar con tecla Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+      closeModal();
+    }
+  });
+  
+  console.log('Modal initialized successfully');
+}
+
+/**
+ * Cierra el modal - ✅ CORREGIDO
+ */
+function closeModal() {
+  const modal = document.getElementById('fanart-modal');
+  if (!modal) return;
+  
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = 'auto';
+  modal.classList.remove('fanart-modal-active');
 }
 
 /**
@@ -36,7 +105,6 @@ export function initCommunity() {
  */
 function initCommunityStats() {
   const submissions = JSON.parse(localStorage.getItem('communitySubmissions') || '[]');
-  const favorites = Storage.getFavorites();
   
   // Animación de contadores
   animateCounter('memberCount', submissions.length + 50);
@@ -64,7 +132,7 @@ function animateCounter(elementId, targetValue) {
 }
 
 /**
- * Inicializa galería de fan art con lazy loading progresivo
+ * Inicializa galería de fan art local con lazy loading progresivo
  */
 function initFanArtGallery() {
   const gallery = document.getElementById('fanart-grid');
@@ -82,20 +150,54 @@ function initFanArtGallery() {
 }
 
 /**
- * Carga más imágenes en la galería
+ * Carga más imágenes en la galería con manejo de errores
  */
 function loadMoreImages(gallery) {
   const endIndex = Math.min(displayedImages + IMAGES_PER_LOAD, FAN_ART_IMAGES.length);
   const imagesToLoad = FAN_ART_IMAGES.slice(displayedImages, endIndex);
   
   imagesToLoad.forEach(img => {
+    const container = document.createElement('div');
+    container.className = 'fanart-item';
+    container.setAttribute('tabindex', '0'); // Para accesibilidad
+    
     const imgElement = document.createElement('img');
     imgElement.src = img.src;
     imgElement.alt = img.alt;
     imgElement.loading = 'lazy';
     imgElement.title = `By ${img.artist} • ❤️ ${img.likes} likes`;
+    
+    // Manejar errores de carga
+    imgElement.addEventListener('error', () => {
+      console.warn(`Failed to load: ${img.src}`);
+      imgElement.src = 'images/placeholder-fanart.webp';
+      imgElement.alt = 'Fan art placeholder';
+      container.classList.add('error-load');
+    });
+    
+    // Click para abrir modal
     imgElement.addEventListener('click', () => openImageModal(img));
-    gallery.appendChild(imgElement);
+    
+    // Soporte para teclado
+    container.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openImageModal(img);
+      }
+    });
+    
+    container.appendChild(imgElement);
+    
+    // Info overlay
+    const info = document.createElement('div');
+    info.className = 'fanart-info';
+    info.innerHTML = `
+      <span class="artist-name">${img.artist}</span>
+      <span class="likes">❤️ ${img.likes}</span>
+    `;
+    container.appendChild(info);
+    
+    gallery.appendChild(container);
   });
   
   displayedImages = endIndex;
@@ -108,44 +210,26 @@ function loadMoreImages(gallery) {
 }
 
 /**
- * Abre modal con imagen ampliada
+ * Abre modal con imagen ampliada - ✅ CORREGIDO
  */
 function openImageModal(img) {
-  // Crear modal dinámico si no existe
-  let modal = document.getElementById('fanart-modal');
+  const modal = document.getElementById('fanart-modal');
   if (!modal) {
-    modal = document.createElement('div');
-    modal.id = 'fanart-modal';
-    modal.className = 'modal';
-    modal.setAttribute('role', 'dialog');
-    modal.setAttribute('aria-modal', 'true');
-    modal.innerHTML = `
-      <div class="modal-content">
-        <button class="modal-close" aria-label="Close">&times;</button>
-        <div class="modal-body"></div>
-      </div>
-    `;
-    document.body.appendChild(modal);
-    
-    // Cerrar modal
-    modal.querySelector('.modal-close').addEventListener('click', () => {
-      modal.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    });
-    
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto';
-      }
-    });
+    console.error('Modal not found when trying to open!');
+    return;
   }
   
-  // Contenido del modal
   const modalBody = modal.querySelector('.modal-body');
+  if (!modalBody) {
+    console.error('Modal body not found!');
+    return;
+  }
+  
+  // Actualizar contenido del modal
   modalBody.innerHTML = `
     <img src="${img.src}" alt="${img.alt}" style="width:100%; max-height:80vh; object-fit:contain;">
-    <div style="padding:1rem; text-align:center;">
+    <div class="modal-info">
+      <h3 id="fanart-modal-title">${img.alt}</h3>
       <p><strong>Artist:</strong> ${img.artist}</p>
       <p>❤️ ${img.likes} likes</p>
     </div>
@@ -153,11 +237,21 @@ function openImageModal(img) {
   
   // Mostrar modal
   modal.style.display = 'flex';
+  modal.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  modal.classList.add('fanart-modal-active');
+  
+  // Enfocar el botón de cerrar
+  const closeBtn = modal.querySelector('.modal-close');
+  if (closeBtn) {
+    setTimeout(() => closeBtn.focus(), 100);
+  }
+  
+  console.log('Modal opened for:', img.src);
 }
 
 /**
- * Inicializa formulario de comunidad con validación visual
+ * Inicializa formulario de comunidad
  */
 function initCommunityForm() {
   const form = document.getElementById('communityForm');
@@ -201,7 +295,6 @@ function initCommunityForm() {
     });
     
     if (!isValid) {
-      // Mostrar mensaje de error general
       const errorField = document.querySelector('.error-message.general');
       if (errorField) {
         errorField.textContent = 'Please fix the errors above before submitting.';
@@ -219,7 +312,7 @@ function initCommunityForm() {
     spinner.style.display = 'inline-block';
     submitBtn.disabled = true;
     
-    // Simular envío (para demo)
+    // Simular envío
     setTimeout(() => {
       // Guardar datos
       const formData = new FormData(form);
@@ -291,7 +384,6 @@ function loadSavedFormData(form) {
     const field = form.querySelector(`[name="${key}"]`);
     if (field && savedData[key]) {
       field.value = savedData[key];
-      // Trigger input event para contador de caracteres
       field.dispatchEvent(new Event('input'));
     }
   });
@@ -307,13 +399,13 @@ function saveSubmission(data) {
     id: Date.now().toString(),
     submittedAt: new Date().toISOString()
   };
-  submissions.unshift(submission); // Añadir al principio
+  submissions.unshift(submission);
   localStorage.setItem('communitySubmissions', JSON.stringify(submissions));
   console.log('Submission saved:', submission);
 }
 
 /**
- * Carga submissions recientes
+ * Carga submissions recientes - ✅ MODIFICADO: SOLO ICONO
  */
 function loadRecentSubmissions() {
   const submissionsList = document.getElementById('submissionsList');
@@ -329,18 +421,22 @@ function loadRecentSubmissions() {
   submissionsList.innerHTML = submissions.slice(0, 5).map(sub => {
     const date = new Date(sub.submittedAt || sub.timestamp);
     const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    const typeIcon = TYPE_DATA[sub.favoriteType]?.icon || '❓';
     
+    // ✅ CORREGIDO: Solo muestra el icono, no el texto
     return `
       <div class="submission-item">
-        <h4>${sub.trainerName || 'Anonymous Trainer'}</h4>
-        <span class="trainer-type">${sub.favoriteType || 'Unknown'}-type Trainer</span>
+        <div class="submission-header">
+          <h4>${sub.trainerName || 'Anonymous Trainer'}</h4>
+          <span class="trainer-type" title="${sub.favoriteType || 'Unknown'} type">${typeIcon}</span>
+        </div>
         ${sub.message ? `<p class="trainer-message">"${sub.message.substring(0, 120)}${sub.message.length > 120 ? '...' : ''}"</p>` : ''}
         <p class="submission-date">${formattedDate}</p>
       </div>
     `;
   }).join('');
   
-  // Actualizar contador de miembros
+  // Actualizar contadores
   document.getElementById('memberCount').textContent = submissions.length + 50;
   document.getElementById('submissionCount').textContent = submissions.length;
 }

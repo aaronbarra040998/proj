@@ -110,6 +110,16 @@
                 <option value="Dragon">🐉 Dragon</option>
                 <option value="Ice">❄️ Ice</option>
                 <option value="Fighting">🥊 Fighting</option>
+                <option value="Poison">☠️ Poison</option>
+                <option value="Ground">🌍 Ground</option>
+                <option value="Flying">🦅 Flying</option>
+                <option value="Bug">🐛 Bug</option>
+                <option value="Rock">🪨 Rock</option>
+                <option value="Ghost">👻 Ghost</option>
+                <option value="Dark">🌙 Dark</option>
+                <option value="Steel">🔩 Steel</option>
+                <option value="Fairy">🧚 Fairy</option>
+                <option value="Normal">⚪ Normal</option>
               </select>
               <span class="error-message" id="favoriteType-error"></span>
             </div>
@@ -144,17 +154,27 @@
       <!-- RIGHT COLUMN: FAN ART GALLERY -->
       <div class="community-right">
         <section class="gallery-section" aria-labelledby="gallery-heading">
-          <h2 id="gallery-heading" class="section-title">🎨 Fan Art Gallery</h2>
+          <h2 id="gallery-heading" class="section-title">🎨 Local Fan Art Gallery</h2>
+          <p class="gallery-description">Browse amazing Pokémon artwork created by our community trainers</p>
           <div class="fanart-grid" id="fanart-grid">
-            <!-- Gallery loaded by JavaScript -->
+            <!-- Gallery loaded by JavaScript from local WebP images -->
           </div>
           <div class="gallery-controls">
             <button id="loadMoreBtn" class="button button-secondary-light">Load More Art</button>
           </div>
+
         </section>
       </div>
     </div>
   </main>
+
+  <!-- FAN ART MODAL (SIEMPRE AL FINAL DEL BODY) -->
+  <div id="fanart-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="fanart-modal-title" style="display:none;">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div class="modal-body"></div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="wrap">

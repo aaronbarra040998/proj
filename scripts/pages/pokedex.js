@@ -165,7 +165,7 @@ async function showPokemonModal(pokemonId) {
   
   modalBody.innerHTML = `
     <h2 id="modal-title">${pokemon.name} #${String(pokemon.id).padStart(3, '0')}</h2>
-    <img src="${p.image}" alt="${pokemon.name}" width="300" height="300">
+    <img src="${pokemon.image}" alt="${pokemon.name}" width="300" height="300">
     <div class="modal-stats">
       <p><strong>Type:</strong> ${pokemon.types.join(', ')}</p>
       <p><strong>Height:</strong> ${pokemon.height}m</p>
