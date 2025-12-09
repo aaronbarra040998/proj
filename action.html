@@ -3,17 +3,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Submission Successful — Pokémon Hub</title>
+  <title>Welcome Trainer! — Pokémon Hub</title>
   <meta name="description" content="Your Pokémon Hub community submission has been received.">
   <meta name="author" content="Aaron A. Barra">
   <link rel="icon" href="images/pokeball.ico" type="image/x-icon">
+  
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
   <link rel="stylesheet" href="styles/main.css">
+  
+  <style>
+    .wrap {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    h1 {
+      font-family: var(--font-pixel);
+      color: var(--pokemon-blue);
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    
+    #submissionSummary {
+      background: linear-gradient(135deg, var(--bg-card), #E8F5E9);
+      border: 3px solid var(--pokemon-green);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin: 2rem 0;
+      box-shadow: var(--shadow-medium);
+    }
+    
+    .button {
+      margin-top: 1rem;
+    }
+    
+    footer {
+      margin-top: 4rem;
+    }
+  </style>
 </head>
 <body>
-  <main class="wrap" style="padding: 2rem; max-width: 600px; margin: 2rem auto; text-align: center;">
-    <h1>Welcome to the Community, Trainer!</h1>
-    <div id="submissionSummary" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 1.5rem 0; text-align: left;"></div>
-    <a href="index.html" class="button button-primary">Return Home</a>
+  <main class="wrap">
+    <h1>🎉 Welcome to the Community, Trainer!</h1>
+    <div id="submissionSummary" style="text-align: left;"></div>
+    <a href="index.html" class="button button-primary">🏠 Return Home</a>
   </main>
   <script type="module" src="scripts/pages/action.js"></script>
 </body>

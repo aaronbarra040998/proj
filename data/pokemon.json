@@ -7,7 +7,15 @@
     "weight": 6.0,
     "abilities": ["Static", "Lightning Rod"],
     "baseExperience": 112,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+    "stats": {
+      "hp": 35,
+      "attack": 55,
+      "defense": 40,
+      "specialAttack": 50,
+      "specialDefense": 50,
+      "speed": 90
+    }
   },
   {
     "id": 1,
@@ -17,7 +25,15 @@
     "weight": 6.9,
     "abilities": ["Overgrow", "Chlorophyll"],
     "baseExperience": 64,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+    "stats": {
+      "hp": 45,
+      "attack": 49,
+      "defense": 49,
+      "specialAttack": 65,
+      "specialDefense": 65,
+      "speed": 45
+    }
   },
   {
     "id": 4,
@@ -27,7 +43,15 @@
     "weight": 8.5,
     "abilities": ["Blaze", "Solar Power"],
     "baseExperience": 62,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+    "stats": {
+      "hp": 39,
+      "attack": 52,
+      "defense": 43,
+      "specialAttack": 60,
+      "specialDefense": 50,
+      "speed": 65
+    }
   },
   {
     "id": 7,
@@ -37,7 +61,15 @@
     "weight": 9.0,
     "abilities": ["Torrent", "Rain Dish"],
     "baseExperience": 63,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+    "stats": {
+      "hp": 44,
+      "attack": 48,
+      "defense": 65,
+      "specialAttack": 50,
+      "specialDefense": 64,
+      "speed": 43
+    }
   },
   {
     "id": 149,
@@ -47,7 +79,15 @@
     "weight": 210.0,
     "abilities": ["Inner Focus", "Multiscale"],
     "baseExperience": 300,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png",
+    "stats": {
+      "hp": 91,
+      "attack": 134,
+      "defense": 95,
+      "specialAttack": 100,
+      "specialDefense": 100,
+      "speed": 80
+    }
   },
   {
     "id": 94,
@@ -57,7 +97,15 @@
     "weight": 40.5,
     "abilities": ["Cursed Body"],
     "baseExperience": 225,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
+    "stats": {
+      "hp": 60,
+      "attack": 65,
+      "defense": 60,
+      "specialAttack": 130,
+      "specialDefense": 75,
+      "speed": 110
+    }
   },
   {
     "id": 130,
@@ -67,7 +115,15 @@
     "weight": 235.0,
     "abilities": ["Intimidate", "Moxie"],
     "baseExperience": 189,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/130.png",
+    "stats": {
+      "hp": 95,
+      "attack": 125,
+      "defense": 79,
+      "specialAttack": 60,
+      "specialDefense": 100,
+      "speed": 81
+    }
   },
   {
     "id": 6,
@@ -77,7 +133,15 @@
     "weight": 90.5,
     "abilities": ["Blaze", "Solar Power"],
     "baseExperience": 240,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png",
+    "stats": {
+      "hp": 78,
+      "attack": 84,
+      "defense": 78,
+      "specialAttack": 109,
+      "specialDefense": 85,
+      "speed": 100
+    }
   },
   {
     "id": 150,
@@ -87,7 +151,15 @@
     "weight": 122.0,
     "abilities": ["Pressure", "Unnerve"],
     "baseExperience": 340,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
+    "stats": {
+      "hp": 106,
+      "attack": 110,
+      "defense": 90,
+      "specialAttack": 154,
+      "specialDefense": 90,
+      "speed": 130
+    }
   },
   {
     "id": 59,
@@ -97,7 +169,15 @@
     "weight": 155.0,
     "abilities": ["Intimidate", "Flash Fire"],
     "baseExperience": 194,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/59.png",
+    "stats": {
+      "hp": 90,
+      "attack": 110,
+      "defense": 80,
+      "specialAttack": 100,
+      "specialDefense": 80,
+      "speed": 95
+    }
   },
   {
     "id": 65,
@@ -107,7 +187,15 @@
     "weight": 48.0,
     "abilities": ["Synchronize", "Inner Focus"],
     "baseExperience": 250,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/65.png",
+    "stats": {
+      "hp": 55,
+      "attack": 50,
+      "defense": 45,
+      "specialAttack": 135,
+      "specialDefense": 95,
+      "speed": 120
+    }
   },
   {
     "id": 80,
@@ -117,7 +205,15 @@
     "weight": 78.5,
     "abilities": ["Oblivious", "Own Tempo"],
     "baseExperience": 172,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/80.png",
+    "stats": {
+      "hp": 95,
+      "attack": 75,
+      "defense": 110,
+      "specialAttack": 100,
+      "specialDefense": 80,
+      "speed": 30
+    }
   },
   {
     "id": 142,
@@ -127,7 +223,15 @@
     "weight": 59.0,
     "abilities": ["Rock Head", "Pressure"],
     "baseExperience": 180,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/142.png",
+    "stats": {
+      "hp": 80,
+      "attack": 105,
+      "defense": 65,
+      "specialAttack": 60,
+      "specialDefense": 75,
+      "speed": 130
+    }
   },
   {
     "id": 115,
@@ -137,7 +241,15 @@
     "weight": 80.0,
     "abilities": ["Early Bird", "Scrappy"],
     "baseExperience": 172,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/115.png",
+    "stats": {
+      "hp": 105,
+      "attack": 95,
+      "defense": 80,
+      "specialAttack": 40,
+      "specialDefense": 80,
+      "speed": 90
+    }
   },
   {
     "id": 128,
@@ -147,7 +259,15 @@
     "weight": 88.4,
     "abilities": ["Intimidate", "Anger Point"],
     "baseExperience": 172,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/128.png",
+    "stats": {
+      "hp": 75,
+      "attack": 100,
+      "defense": 95,
+      "specialAttack": 40,
+      "specialDefense": 70,
+      "speed": 110
+    }
   },
   {
     "id": 121,
@@ -157,7 +277,15 @@
     "weight": 80.0,
     "abilities": ["Illuminate", "Natural Cure"],
     "baseExperience": 182,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/121.png",
+    "stats": {
+      "hp": 60,
+      "attack": 75,
+      "defense": 85,
+      "specialAttack": 100,
+      "specialDefense": 85,
+      "speed": 115
+    }
   },
   {
     "id": 124,
@@ -167,7 +295,15 @@
     "weight": 40.6,
     "abilities": ["Oblivious", "Forewarn"],
     "baseExperience": 159,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/124.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/124.png",
+    "stats": {
+      "hp": 65,
+      "attack": 50,
+      "defense": 35,
+      "specialAttack": 115,
+      "specialDefense": 95,
+      "speed": 95
+    }
   },
   {
     "id": 112,
@@ -177,7 +313,15 @@
     "weight": 120.0,
     "abilities": ["Lightning Rod", "Rock Head"],
     "baseExperience": 170,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/112.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/112.png",
+    "stats": {
+      "hp": 105,
+      "attack": 130,
+      "defense": 120,
+      "specialAttack": 45,
+      "specialDefense": 45,
+      "speed": 40
+    }
   },
   {
     "id": 51,
@@ -187,7 +331,15 @@
     "weight": 33.3,
     "abilities": ["Sand Veil", "Arena Trap"],
     "baseExperience": 142,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/51.png",
+    "stats": {
+      "hp": 35,
+      "attack": 100,
+      "defense": 50,
+      "specialAttack": 50,
+      "specialDefense": 70,
+      "speed": 120
+    }
   },
   {
     "id": 38,
@@ -197,6 +349,14 @@
     "weight": 19.9,
     "abilities": ["Flash Fire", "Drought"],
     "baseExperience": 177,
-    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png"
+    "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/38.png",
+    "stats": {
+      "hp": 73,
+      "attack": 76,
+      "defense": 75,
+      "specialAttack": 81,
+      "specialDefense": 100,
+      "speed": 100
+    }
   }
 ]

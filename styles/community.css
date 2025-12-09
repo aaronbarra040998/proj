@@ -1,68 +1,124 @@
-/* === GALLERY === */
+/* === GALLERY - ESTILO POKÉMON === */
 .gallery-section {
-  margin: 2rem 0;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.gallery-section::before {
+  content: '✨';
+  position: absolute;
+  top: -20px;
+  right: 0;
+  font-size: 2rem;
+  animation: float 3s ease-in-out infinite;
 }
 
 .fanart-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
   gap: var(--gap);
-  margin: 1.5rem 0;
+  margin: 2rem 0;
 }
 
 .fanart-grid img {
   width: 100%;
-  height: 200px;
+  height: 220px;
   object-fit: cover;
   border-radius: var(--radius);
-  border: 1px solid var(--border);
-  transition: transform 0.3s ease;
+  border: 3px solid var(--border);
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: var(--shadow-light);
 }
 
 .fanart-grid img:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) translateY(-8px);
+  border-color: var(--pokemon-yellow);
+  box-shadow: var(--shadow-heavy);
+  filter: brightness(1.1);
 }
 
-/* === FORM === */
+/* === FORM - ESTILO POKÉMON === */
 .form-section {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 2rem;
-  margin: 2rem 0;
+  background: linear-gradient(135deg, var(--bg-card), #E8F5E9);
+  border: 3px solid var(--pokemon-green);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem;
+  margin: 3rem 0;
+  box-shadow: var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+}
+
+.form-section::before {
+  content: '❤️';
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 3rem;
+  opacity: 0.1;
+  transform: rotate(-15deg);
 }
 
 .community-form {
   display: grid;
-  gap: 1rem;
+  gap: 1.25rem;
   max-width: 600px;
   margin: 0 auto;
 }
 
 .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-body);
+  color: var(--pokemon-blue);
+  font-size: 1.1rem;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.875rem;
   border: 2px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-body);
   color: var(--text-main);
-  font-family: inherit;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
 }
 
 .form-group textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
 
 .community-form button[type="submit"] {
   justify-self: center;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 3rem;
+}
+
+/* === MENSAJES DE VALIDACIÓN === */
+.form-group input:invalid:focus,
+.form-group textarea:invalid:focus {
+  border-color: var(--pokemon-red);
+  background: rgba(255, 0, 0, 0.05);
+}
+
+/* === TIPOS POKÉMON EN FORM === */
+#favoriteType {
+  text-transform: capitalize;
+}
+
+#favoriteType option:checked {
+  background: linear-gradient(135deg, var(--pokemon-blue), var(--pokemon-water));
+  color: white;
 }

@@ -17,15 +17,15 @@
   <!-- FAVICON -->
   <link rel="icon" href="images/pokeball.ico" type="image/x-icon">
 
-  <!-- CSS CON RUTAS ABSOLUTAS -->
-  <link rel="stylesheet" href="styles/normalize.css">
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/community.css">
-  
   <!-- GOOGLE FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/community.css">
 </head>
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -34,7 +34,7 @@
     <div class="wrap header-inner">
       <div class="logo">
         <a href="index.html" aria-label="Pokémon Hub homepage">
-          <span class="logo-text">Pokémon Hub</span>
+          <span class="logo-text">⚡ Pokémon Hub</span>
         </a>
       </div>
       <button id="menuBtn" class="menu-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
@@ -42,60 +42,62 @@
       </button>
       <nav id="mainNav" class="main-nav" aria-label="Main navigation">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="pokedex.html">Pokédex</a></li>
-          <li><a href="community.html" aria-current="page">Community</a></li>
-          <li><a href="attributions.html">Attributions</a></li>
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="pokedex.html">📖 Pokédex</a></li>
+          <li><a href="community.html" aria-current="page">👥 Community</a></li>
+          <li><a href="attributions.html">📋 Attributions</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <main id="main-content" class="wrap">
-    <h1>Pokémon Community Hub</h1>
+    <h1>👥 Pokémon Community Hub</h1>
     <p class="page-description">Share your passion for Pokémon! Join our community and showcase your fan art.</p>
 
     <!-- FAN ART GALLERY -->
     <section class="gallery-section" aria-labelledby="gallery-heading">
-      <h2 id="gallery-heading" class="section-title">Fan Art Gallery</h2>
-      <div class="fanart-grid" id="fanart-grid"></div>
+      <h2 id="gallery-heading" class="section-title">🎨 Fan Art Gallery</h2>
+      <div class="fanart-grid" id="fanart-grid">
+        <!-- Gallery loaded by JavaScript -->
+      </div>
     </section>
 
     <!-- COMMUNITY FORM -->
     <section class="form-section" aria-labelledby="form-heading">
-      <h2 id="form-heading" class="section-title">Join Our Community</h2>
+      <h2 id="form-heading" class="section-title">📝 Join Our Community</h2>
       <form id="communityForm" method="get" action="action.html" class="community-form">
         <div class="form-group">
-          <label for="trainerName">Trainer Name *</label>
-          <input type="text" id="trainerName" name="trainerName" required autocomplete="name">
+          <label for="trainerName">🏆 Trainer Name *</label>
+          <input type="text" id="trainerName" name="trainerName" required autocomplete="name" placeholder="Enter your trainer name...">
         </div>
         
         <div class="form-group">
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" name="email" required autocomplete="email">
+          <label for="email">📧 Email Address *</label>
+          <input type="email" id="email" name="email" required autocomplete="email" placeholder="trainer@pokemon.com">
         </div>
         
         <div class="form-group">
-          <label for="favoriteType">Favorite Pokémon Type *</label>
+          <label for="favoriteType">❤️ Favorite Pokémon Type *</label>
           <select id="favoriteType" name="favoriteType" required>
             <option value="">Select a type...</option>
-            <option value="Fire">Fire</option>
-            <option value="Water">Water</option>
-            <option value="Grass">Grass</option>
-            <option value="Electric">Electric</option>
-            <option value="Psychic">Psychic</option>
-            <option value="Dragon">Dragon</option>
+            <option value="Fire">🔥 Fire</option>
+            <option value="Water">💧 Water</option>
+            <option value="Grass">🌿 Grass</option>
+            <option value="Electric">⚡ Electric</option>
+            <option value="Psychic">🔮 Psychic</option>
+            <option value="Dragon">🐉 Dragon</option>
           </select>
         </div>
         
         <div class="form-group">
-          <label for="message">Why do you love Pokémon?</label>
-          <textarea id="message" name="message" rows="4"></textarea>
+          <label for="message">💭 Why do you love Pokémon?</label>
+          <textarea id="message" name="message" rows="5" placeholder="Share your Pokémon story..."></textarea>
         </div>
         
         <input type="hidden" id="timestamp" name="timestamp" value="">
         
-        <button type="submit" class="button button-primary">Join Community</button>
+        <button type="submit" class="button button-primary">🚀 Join Community</button>
       </form>
     </section>
   </main>
@@ -104,12 +106,12 @@
     <div class="wrap">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>Pokémon Hub</h3>
+          <h3>🎮 Pokémon Hub</h3>
           <p>Interactive Pokémon experience built with vanilla web technologies.</p>
           <p><a href="attributions.html">📋 Resource Attributions</a></p>
         </div>
         <div class="footer-section">
-          <h3>Development</h3>
+          <h3>💻 Development</h3>
           <p>Aaron A. Barra | WDD 231</p>
           <p id="lastModified">Last modified: Loading...</p>
           <p><a href="https://youtube.com/your-video-demo" target="_blank" rel="noopener noreferrer">📹 Project Video</a></p>

@@ -7,29 +7,116 @@
   <meta name="description" content="Resource attributions for Pokémon Hub project.">
   <meta name="author" content="Aaron A. Barra">
   <link rel="icon" href="images/pokeball.ico" type="image/x-icon">
-</head>
-<body style="font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 1rem;">
-  <h1>Resource Attributions</h1>
   
-  <section style="margin-bottom: 2rem;">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles/normalize.css">
+  <link rel="stylesheet" href="styles/main.css">
+  
+  <style>
+    body {
+      font-family: var(--font-body);
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--bg-body);
+    }
+    
+    h1 {
+      font-family: var(--font-pixel);
+      color: var(--pokemon-blue);
+      margin-bottom: 3rem;
+      text-align: center;
+      font-size: 2rem;
+    }
+    
+    section {
+      background: var(--bg-card);
+      border: 3px solid var(--pokemon-yellow);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin: 2rem 0;
+      box-shadow: var(--shadow-medium);
+    }
+    
+    h2 {
+      font-family: var(--font-pixel);
+      color: var(--pokemon-red);
+      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+    }
+    
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    
+    a {
+      color: var(--pokemon-blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+    
+    a:hover {
+      color: var(--pokemon-red);
+      text-decoration: underline;
+    }
+    
+    strong {
+      color: var(--pokemon-blue);
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.75rem 1.5rem;
+      background: var(--pokemon-blue);
+      color: white !important;
+      border-radius: var(--radius);
+      text-decoration: none !important;
+      transition: var(--transition);
+    }
+    
+    .back-link:hover {
+      background: var(--pokemon-red);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body style="padding: 2rem;">
+  <h1>📋 Resource Attributions</h1>
+  
+  <section>
     <h2>📸 Images & Data</h2>
     <p><strong>Pokémon Sprites & Data:</strong> <a href="https://pokeapi.co/" target="_blank">PokeAPI</a> (educational use, unofficial)</p>
     <p><strong>Hero Image:</strong> <a href="https://unsplash.com/" target="_blank">Unsplash</a> (free license)</p>
     <p><strong>Favicon:</strong> Custom Pokéball design (converted from PNG)</p>
   </section>
 
-  <section style="margin-bottom: 2rem;">
+  <section>
     <h2>🎨 Fonts</h2>
-    <p><strong>Inter Font:</strong> <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> (SIL Open Font License)</p>
+    <p><strong>Press Start 2P:</strong> <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> (Retro gaming font)</p>
+    <p><strong>Roboto:</strong> <a href="https://fonts.google.com/" target="_blank">Google Fonts</a> (Body text)</p>
   </section>
 
-  <section style="margin-bottom: 2rem;">
+  <section>
     <h2>💻 Code</h2>
     <p><strong>Technologies:</strong> Vanilla HTML, CSS, JavaScript (ES6 Modules)</p>
     <p><strong>Course:</strong> WDD 231 - Web Frontend Development II</p>
-    <p><strong>Developer:</strong> Aaron A. Barra</p>
   </section>
 
-  <p style="margin-top: 2rem;"><a href="index.html">← Return to Homepage</a></p>
+  <section>
+    <h2>🎮 Special Thanks</h2>
+    <p><strong>Inspiration:</strong> The Pokémon Company & Nintendo</p>
+    <p><strong>Community:</strong> Pokémon trainers worldwide</p>
+    <p><strong>Tools:</strong> VS Code, GitHub Pages</p>
+  </section>
+
+  <p style="margin-top: 2rem;"><a href="index.html" class="back-link">← Return to Homepage</a></p>
 </body>
 </html>

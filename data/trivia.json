@@ -1,0 +1,50 @@
+[
+  {
+    "question": "What type is Pikachu?",
+    "options": ["Electric", "Fire", "Water", "Grass"],
+    "correct": 0,
+    "explanation": "Pikachu is an Electric-type Pokémon!"
+  },
+  {
+    "question": "Which is the Fire-type starter from Generation 1?",
+    "options": ["Bulbasaur", "Charmander", "Squirtle", "Pikachu"],
+    "correct": 1,
+    "explanation": "Charmander is the Fire-type starter."
+  },
+  {
+    "question": "What item does Pikachu need to evolve into Raichu?",
+    "options": ["Thunder Stone", "Water Stone", "Fire Stone", "It doesn't evolve"],
+    "correct": 0,
+    "explanation": "Pikachu needs a Thunder Stone to evolve."
+  },
+  {
+    "question": "What type is super effective against Dragon?",
+    "options": ["Fairy", "Fire", "Water", "Normal"],
+    "correct": 0,
+    "explanation": "Fairy-type moves are super effective against Dragon-type Pokémon."
+  },
+  {
+    "question": "What ability does Gengar have?",
+    "options": ["Cursed Body", "Flash Fire", "Torrent", "Run Away"],
+    "correct": 0,
+    "explanation": "Gengar has the ability Cursed Body."
+  },
+  {
+    "question": "How many evolutions does Eevee currently have?",
+    "options": ["6", "7", "8", "9"],
+    "correct": 2,
+    "explanation": "Eevee currently has 8 different evolutions."
+  },
+  {
+    "question": "Which type is not very effective against itself?",
+    "options": ["Dragon", "Ghost", "Fire", "All are neutral"],
+    "correct": 0,
+    "explanation": "Dragon-type moves are not very effective against Dragon-type Pokémon."
+  },
+  {
+    "question": "What is the name of the legendary Pokémon from Generation 1?",
+    "options": ["Mew", "Mewtwo", "Both", "None"],
+    "correct": 2,
+    "explanation": "Both Mew and Mewtwo are legendary Pokémon from Generation 1."
+  }
+]

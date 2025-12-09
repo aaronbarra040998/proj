@@ -84,9 +84,19 @@ export const Storage = {
     }
   },
   
+  // NUEVO MÉTODO - FALTANTE
+  getPokemonData() {
+    try {
+      return JSON.parse(localStorage.getItem('pokemonData') || '[]');
+    } catch (error) {
+      console.error('Error getting Pokémon data:', error);
+      return [];
+    }
+  },
+  
   getPokemonById(id) {
     try {
-      const data = JSON.parse(localStorage.getItem('pokemonData') || '[]');
+      const data = this.getPokemonData(); // Usa el método corregido
       return data.find(p => p.id == id) || null;
     } catch (error) {
       console.error('Error getting Pokémon by ID:', error);
